@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-8 col-xs-12 col-md-offset-2">
+    <hr>
+    <h3>Active</h3>
+    <hr>
+    <ng-container *ngFor="let user of users">
+      <ul class="list-group" *ngIf="user.active">
+        <li class="list-group-item clearfix">{{ user.name }} | <a href="#" (click)="changeActive(user.name)">Set To
+            Inactive</a></li>
+      </ul>
+    </ng-container>
+    <hr>
+    <h3>Inactive</h3>
+    <hr>
+    <ng-container *ngFor="let user of users">
+      <ul class="list-group" *ngIf="!user.active">
+        <li class="list-group-item clearfix">{{ user.name }} | <a href="#" (click)="changeActive(user.name)">Set To Active</a></li>
+      </ul>
+    </ng-container>
+  </div>
+</div>
